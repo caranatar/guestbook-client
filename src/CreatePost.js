@@ -12,9 +12,8 @@ const backendLogin = async (
 ) => {
   try {
     const opts = {
-      redirectUri: window.location.href,
       audience: process.env.REACT_APP_AUTH0_AUDIENCE,
-      scope: "openid email profile update:posts",
+      scope: "update:posts",
     };
     const accessToken = await getAccessToken(opts);
 
