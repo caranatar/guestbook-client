@@ -1,5 +1,6 @@
 {
-  "name": "client",
+  "name": "guestbook-client",
+  "homepage": "https://caranatar.github.io/guestbook-client",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -29,7 +30,9 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "css-build": "node-sass --omit-source-map-url src/sass/styles.scss src/css/styles.css",
-    "css-watch": "npm run css-build -- --watch"
+    "css-watch": "npm run css-build -- --watch",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -47,6 +50,7 @@
     ]
   },
   "devDependencies": {
+    "gh-pages": "^3.1.0",
     "prettier": "^2.0.5"
   }
 }
