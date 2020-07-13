@@ -32,7 +32,7 @@ const backendLogin = async (
 };
 
 const CreatePost = ({ setIsSubmitted }) => {
-  const { user, getAccessTokenWithPopup } = useAuth0();
+  const { user, getAccessTokenSilently } = useAuth0();
   const client = useApolloClient();
   const [isLoading, setIsLoading] = React.useState(true);
   const [titleValue, setTitleValue] = React.useState("");
@@ -55,8 +55,8 @@ const CreatePost = ({ setIsSubmitted }) => {
 
   const [login] = useMutation(LOGIN);
   React.useEffect(() => {
-    backendLogin(login, getAccessTokenWithPopup, client, user, setIsLoading);
-  }, [login, getAccessTokenWithPopup, client, user, setIsLoading]);
+    backendLogin(login, getAccessTokenSilently, client, user, setIsLoading);
+  }, [login, getAccessTokenSilently, client, user, setIsLoading]);
 
   const [createPost] = useMutation(CREATE_POST);
   const handleCreatePost = () => {
